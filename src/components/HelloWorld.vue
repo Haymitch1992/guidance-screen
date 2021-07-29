@@ -2,12 +2,12 @@
   <div class="hello">
     <ul>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-1">
           1#（首钢站）
         </router-link>
       </li>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-1">
           2#（首钢站）
         </router-link>
       </li>
@@ -22,12 +22,12 @@
         </router-link>
       </li>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-4">
           1#（金顶街）
         </router-link>
       </li>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-4">
           2#（金顶街）
         </router-link>
       </li>
@@ -42,12 +42,12 @@
         </router-link>
       </li>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-2">
           1#（北新桥）
         </router-link>
       </li>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-2">
           2#（北新桥）
         </router-link>
       </li>
@@ -62,12 +62,12 @@
         </router-link>
       </li>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-3">
           1#（金安桥）
         </router-link>
       </li>
       <li>
-        <router-link class="link-tag" to="/entranceGate">
+        <router-link class="link-tag" to="/screen1-3">
           2#（金安桥）
         </router-link>
       </li>

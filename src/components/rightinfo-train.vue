@@ -9,39 +9,9 @@
         {{ transformCn[currentTime3] }} {{ currentTime2 }}
       </div>
     </div>
+    <!-- 根据状态 切换显示 -->
     <ul>
-      <li style="padding-top:70px;">
-        <div class="exit-icon-line">
-          <span class="exit-icon">11</span>
-          <div class="station-info">
-            <p>开往首钢</p>
-            <p class="english">To SHOUGANG</p>
-          </div>
-        </div>
-        <div class="time-text">
-          <div class="train-info">
-            <img src="../assets/train-icon.png" alt="" />
-            <div class="train-text">
-              <p class="p1">本次列车</p>
-              <p class="p2">This Train</p>
-            </div>
-          </div>
-          <span class="time-num">3</span>
-          <span>分钟（Min）</span>
-        </div>
-        <div class="time-text">
-          <div class="train-info">
-            <img src="../assets/train-icon.png" alt="" />
-            <div class="train-text">
-              <p class="p1">下次列车</p>
-              <p class="p2">Next Train</p>
-            </div>
-          </div>
-          <span class="time-num">3</span>
-          <span>分钟（Min）</span>
-        </div>
-      </li>
-      <li>
+      <li v-if="line1 === 1 || line1 === 2 || line1 === 3">
         <div class="exit-icon-line">
           <span class="exit-icon">11</span>
 
@@ -61,12 +31,84 @@
           <span class="time-num">3</span>
           <span>分钟（Min）</span>
         </div>
-        <div class="time-text">
+        <div class="time-text" v-if="line1 !== 3">
           <div class="train-info">
             <img src="../assets/train-icon.png" alt="" />
             <div class="train-text">
               <p class="p1">下次列车</p>
               <p class="p2">Next Train</p>
+            </div>
+          </div>
+          <span class="time-num">3</span>
+          <span>分钟（Min）</span>
+        </div>
+      </li>
+      <li v-if="line1 === 4 || line1 === 2 || line1 === 3">
+        <div class="exit-icon-line">
+          <span class="exit-icon">11</span>
+          <div class="station-info">
+            <p>开往首钢</p>
+            <p class="english">To SHOUGANG</p>
+          </div>
+          <img class="dongao-logo" src="../assets/dongao.png" alt="" />
+        </div>
+        <div class="time-text">
+          <div class="train-info">
+            <img src="../assets/train-icon.png" alt="" />
+            <div class="train-text">
+              <p class="p1">本次列车</p>
+              <p class="p2">This Train</p>
+            </div>
+          </div>
+          <span class="time-num">3</span>
+          <span>分钟（Min）</span>
+        </div>
+        <div class="time-text" v-if="line1 !== 3">
+          <div class="train-info">
+            <img src="../assets/train-icon.png" alt="" />
+            <div class="train-text">
+              <p class="p1">下次列车</p>
+              <p class="p2">Next Train</p>
+            </div>
+          </div>
+          <span class="time-num">3</span>
+          <span>分钟（Min）</span>
+        </div>
+      </li>
+      <li v-if="line1 === 3">
+        <div class="exit-icon-line">
+          <span class="exit-icon s1">S1</span>
+          <div class="station-info">
+            <p>开往四道桥</p>
+            <p class="english">To Sidaoqiao</p>
+          </div>
+        </div>
+        <div class="time-text">
+          <div class="train-info">
+            <img src="../assets/train-icon.png" alt="" />
+            <div class="train-text">
+              <p class="p1">本次列车</p>
+              <p class="p2">This Train</p>
+            </div>
+          </div>
+          <span class="time-num">3</span>
+          <span>分钟（Min）</span>
+        </div>
+      </li>
+      <li v-if="line1 === 3">
+        <div class="exit-icon-line">
+          <span class="exit-icon line-6">6</span>
+          <div class="station-info">
+            <p>开往杨庄</p>
+            <p class="english">To Yangzhuang</p>
+          </div>
+        </div>
+        <div class="time-text">
+          <div class="train-info">
+            <img src="../assets/train-icon.png" alt="" />
+            <div class="train-text">
+              <p class="p1">本次列车</p>
+              <p class="p2">This Train</p>
             </div>
           </div>
           <span class="time-num">3</span>
@@ -82,18 +124,7 @@ export default {
   name: 'tips',
   props: {
     stopObj: Object,
-    line1: {
-      type: Object,
-      default: () => {
-        return { up: 3, down: 3 };
-      }
-    },
-    line2: {
-      type: Object,
-      default: () => {
-        return { up: 3, down: 3 };
-      }
-    }
+    line1: Number // 1 首钢 2 北辛安 3 金安桥 4 金顶街
   },
   data() {
     return {
@@ -130,6 +161,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.dongao-logo {
+  display: inline-block;
+  width: 40px;
+  position: absolute;
+  right: 50px;
+  top: 10px;
+}
 .arrived-box {
   width: 394px;
   background: linear-gradient(#1e1e3b, #07071b);
@@ -173,8 +211,15 @@ export default {
     height: 60px;
     line-height: 52px;
   }
+  .s1 {
+    background: #b35a20;
+  }
+  .line-6 {
+    background: #b28619;
+  }
   .exit-icon-line {
     margin-bottom: 20px;
+    position: relative;
   }
   .time-item {
     height: 300px;

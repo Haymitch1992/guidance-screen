@@ -17,6 +17,27 @@ const routes = [
     component: () => import('../views/screen4.vue'),
   },
   {
+    path: '/screen1-1',
+    name: 'screen1-1',
+    component: () => import('../views/screen1-1.vue'),
+  },
+  {
+    path: '/screen1-2',
+    name: 'screen1-2',
+    component: () => import('../views/screen1-2.vue'),
+  },
+  {
+    path: '/screen1-3',
+    name: 'screen1-3',
+    component: () => import('../views/screen1-3.vue'),
+  },
+  {
+    path: '/screen1-4',
+    name: 'screen1-4',
+    component: () => import('../views/screen1-4.vue'),
+  },
+
+  {
     path: '/screen4-3',
     name: 'screen4-3',
     component: () => import('../views/screen4-3.vue'),

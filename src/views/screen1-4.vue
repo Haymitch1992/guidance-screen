@@ -2,7 +2,7 @@
   <div>
     <headerbox></headerbox>
     <broadcast></broadcast>
-    <rightinfo :line1="3"></rightinfo>
+    <rightinfo :line1="4"></rightinfo>
     <entrance :stationType="stationType"></entrance>
   </div>
 </template>
