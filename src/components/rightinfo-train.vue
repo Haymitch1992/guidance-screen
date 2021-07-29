@@ -17,7 +17,7 @@
 
           <div class="station-info">
             <p>开往金顶街</p>
-            <p class="english">TO JINDINGJIE</p>
+            <p class="english">To JINDINGJIE</p>
           </div>
         </div>
         <div class="time-text">
@@ -25,7 +25,7 @@
             <img src="../assets/train-icon.png" alt="" />
             <div class="train-text">
               <p class="p1">本次列车</p>
-              <p class="p2">This Train</p>
+              <p class="p2">The train Arriving</p>
             </div>
           </div>
           <span class="time-num">3</span>
@@ -36,7 +36,7 @@
             <img src="../assets/train-icon.png" alt="" />
             <div class="train-text">
               <p class="p1">下次列车</p>
-              <p class="p2">Next Train</p>
+              <p class="p2">Next train</p>
             </div>
           </div>
           <span class="time-num">3</span>
@@ -57,7 +57,7 @@
             <img src="../assets/train-icon.png" alt="" />
             <div class="train-text">
               <p class="p1">本次列车</p>
-              <p class="p2">This Train</p>
+              <p class="p2">The train Arriving</p>
             </div>
           </div>
           <span class="time-num">3</span>
@@ -68,7 +68,7 @@
             <img src="../assets/train-icon.png" alt="" />
             <div class="train-text">
               <p class="p1">下次列车</p>
-              <p class="p2">Next Train</p>
+              <p class="p2">Next train</p>
             </div>
           </div>
           <span class="time-num">3</span>
@@ -80,7 +80,7 @@
           <span class="exit-icon s1">S1</span>
           <div class="station-info">
             <p>开往四道桥</p>
-            <p class="english">To Sidaoqiao</p>
+            <p class="english">To SIDAOQIAO</p>
           </div>
         </div>
         <div class="time-text">
@@ -88,7 +88,7 @@
             <img src="../assets/train-icon.png" alt="" />
             <div class="train-text">
               <p class="p1">本次列车</p>
-              <p class="p2">This Train</p>
+              <p class="p2">The train Arriving</p>
             </div>
           </div>
           <span class="time-num">3</span>
@@ -100,7 +100,7 @@
           <span class="exit-icon line-6">6</span>
           <div class="station-info">
             <p>开往杨庄</p>
-            <p class="english">To Yangzhuang</p>
+            <p class="english">To YANGZHUANG</p>
           </div>
         </div>
         <div class="time-text">
@@ -108,7 +108,7 @@
             <img src="../assets/train-icon.png" alt="" />
             <div class="train-text">
               <p class="p1">本次列车</p>
-              <p class="p2">This Train</p>
+              <p class="p2">The train Arriving</p>
             </div>
           </div>
           <span class="time-num">3</span>
@@ -181,6 +181,11 @@ export default {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
+    width: 158px;
+    padding-left: 14px;
+    text-align: left;
+    position: relative;
+    top: 2px;
     img {
       margin-right: 10px;
     }

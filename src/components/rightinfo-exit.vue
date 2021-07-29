@@ -15,7 +15,7 @@
           <span class="exit-icon">A</span>
           <div class="station-info">
             <p>出口</p>
-            <p class="english">Exit</p>
+            <p class="english">EXIT</p>
           </div>
         </div>
         <div class="time-text">
@@ -39,7 +39,7 @@
           <span class="exit-icon">B</span>
           <div class="station-info">
             <p>出口</p>
-            <p class="english">Exit</p>
+            <p class="english">EXIT</p>
           </div>
         </div>
         <div class="time-text">

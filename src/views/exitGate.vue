@@ -29,7 +29,7 @@ export default {
       timer: '',
       stationType: {
         text1: '出站检票',
-        text2: 'Exit Gate'
+        text2: 'Check out'
       },
       busInfo: [
         {

@@ -6,17 +6,17 @@
         <span class="exit-icon">A</span>
         <div class="screent-text-block">
           <p>西南口</p>
-          <p class="text">Sounthwest</p>
+          <p class="text">Southwest</p>
         </div>
         <span class="exit-icon">B</span>
         <div class="screent-text-block">
           <p>西北口</p>
-          <p class="text">NorthWest</p>
+          <p class="text">Northwest</p>
         </div>
         <div class="screent-text-block screent-text-block-2">
           <span>10m</span>
           <img class="person-icon" src="../assets/distance-right-1.gif" alt="" />
-          <img src="../assets/arrow-right-1.png" alt="" />
+          <img class="scroll-icon" src="../assets/arrow-bottom-1.png" alt="" />
         </div>
       </div>
       <div class="screen-item  exit-block">
@@ -24,18 +24,18 @@
           <span class="exit-icon">A</span>
           <div class="screent-text-block">
             <p>西南口</p>
-            <p class="text">Sounthwest</p>
+            <p class="text">Northeast</p>
           </div>
         </span>
         <span class="exit-icon">C</span>
         <div class="screent-text-block">
           <p>东北口</p>
-          <p class="text">NorthEast</p>
+          <p class="text">Northeast</p>
         </div>
         <div class="screent-text-block screent-text-block-2">
           <span>10m</span>
           <img class="person-icon" src="../assets/distance-right-1.gif" alt="" />
-          <img src="../assets/arrow-bottom-1.png" alt="" />
+          <img src="../assets/arrow-top-1.png" alt="" />
         </div>
       </div>
     </div>
@@ -64,6 +64,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.scroll-icon {
+  transform: rotate(-90deg);
+}
 .screen-C {
   position: absolute;
   top: 320px;

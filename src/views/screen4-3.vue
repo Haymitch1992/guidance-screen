@@ -6,12 +6,12 @@
         <span class="exit-icon">A</span>
         <div class="screent-text-block">
           <p>西南口</p>
-          <p class="text">Sounthwest</p>
+          <p class="text">Southwest</p>
         </div>
         <span class="exit-icon">B</span>
         <div class="screent-text-block">
           <p>西北口</p>
-          <p class="text">NorthWest</p>
+          <p class="text">Northwest</p>
         </div>
         <div class="screent-text-block screent-text-block-2">
           <span>10m</span>
@@ -20,7 +20,7 @@
             src="../assets/distance-right-1.gif"
             alt=""
           />
-          <img src="../assets/arrow-bottom-1.png" alt="" />
+          <img class="scroll-icon" src="../assets/arrow-bottom-1.png" alt="" />
         </div>
       </div>
       <div class="screen-item  exit-block">
@@ -34,7 +34,7 @@
         <span class="exit-icon">C</span>
         <div class="screent-text-block">
           <p>东北口</p>
-          <p class="text">NorthEast</p>
+          <p class="text">Northeast</p>
         </div>
         <div class="screent-text-block screent-text-block-2">
           <span>10m</span>
@@ -43,29 +43,30 @@
             src="../assets/distance-right-1.gif"
             alt=""
           />
-          <img src="../assets/arrow-right-1.png" alt="" />
+          <img src="../assets/arrow-top-1.png" alt="" />
         </div>
       </div>
       <div class="screen-item  exit-block">
-        <div class="screent-text-block screent-text-block-3">
-          <img class="rotate-img" src="../assets/arrow-right-1.png" alt="" />
-          <img src="../assets/distance-left-1.gif" alt="" />
-          <span>10m</span>
-        </div>
+        <span class="unvisiabled">
+          <span class="exit-icon">A</span>
+          <div class="screent-text-block">
+            <p>西南口</p>
+            <p class="text">Sounthwest</p>
+          </div>
+        </span>
         <span class="exit-icon exit-icon-3">6</span>
         <div class="screent-text-block">
           <p>号线</p>
-          <p class="text">Line</p>
+          <p class="text">Line 6</p>
         </div>
-        <div class="screent-text-block " style="margin-right:0">
-          <span class="unvisiabled">
-            <span>10m</span>
-            <img
-              class="person-icon"
-              src="../assets/distance-left-1.gif"
-              alt=""
-            />
-          </span>
+        <div class="screent-text-block screent-text-block-2">
+          <span>10m</span>
+          <img
+            class="person-icon"
+            src="../assets/distance-right-1.gif"
+            alt=""
+          />
+          <img src="../assets/fanhui.png" alt="" />
         </div>
       </div>
     </div>
@@ -94,6 +95,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.scroll-icon {
+  transform: rotate(-90deg);
+}
 .screen-C {
   position: absolute;
   top: 190px;

@@ -7,7 +7,7 @@
       <div class="broadcast-container" :style="{ left: leftNum + 'px' }">
         <div class="broadcast-item">
           <span class="broadcast-text">欢迎乘坐北京地铁十一号线</span>
-          <span>Welcome to BeiJing Metro Line 11</span>
+          <span>Welcome to BeiJing Subway Line 11</span>
         </div>
         <div class="broadcast-item" v-if="weatherInfo">
           <span class="broadcast-text">
@@ -15,16 +15,16 @@
             {{ weatherInfo.humidity }}
           </span>
           <span>
-            Welcome to BeiJing Metro Line 11
+            Welcome to BeiJing Subway Line 11
           </span>
         </div>
         <div class="broadcast-item" v-if="!weatherInfo">
           <span class="broadcast-text">欢迎乘坐北京地铁十一号线</span>
-          <span>Welcome to BeiJing Metro Line 11</span>
+          <span>Welcome to BeiJing Subway Line 11</span>
         </div>
         <div class="broadcast-item">
           <span class="broadcast-text">欢迎乘坐北京地铁十一号线</span>
-          <span>Welcome to BeiJing Metro Line 11</span>
+          <span>Welcome to BeiJing Subway Line 11</span>
         </div>
       </div>
     </div>

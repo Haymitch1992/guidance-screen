@@ -25,7 +25,7 @@ export default {
     return {
       stationType: {
         text1: '进站检票',
-        text2: 'Entrance Gate'
+        text2: 'Check in'
       },
       weatherInfo: {},
       timer: '',
