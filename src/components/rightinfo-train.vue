@@ -92,7 +92,7 @@
             </div>
           </div>
           <span class="time-num">3</span>
-          <span>分钟（Min）</span>
+          <span>分钟(Min)</span>
         </div>
       </li>
       <li v-if="line1 === 3">
@@ -112,7 +112,7 @@
             </div>
           </div>
           <span class="time-num">3</span>
-          <span>分钟（Min）</span>
+          <span>分钟(Min)</span>
         </div>
       </li>
     </ul>
@@ -181,7 +181,7 @@ export default {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
-    width: 158px;
+    width: 156px;
     padding-left: 14px;
     text-align: left;
     position: relative;
@@ -194,7 +194,7 @@ export default {
       color: #a4a4af;
       font-weight: bold;
       .p1 {
-        font-size: 18px;
+        font-size: 16px;
       }
       .p2 {
         font-size: 14px;
@@ -207,7 +207,7 @@ export default {
     font-size: 30px;
     color: #fff;
     background: #ed9166;
-    border: 4px solid #fff;
+    border: 2px solid #fff;
     text-align: center;
     vertical-align: bottom;
     border-radius: 10px;

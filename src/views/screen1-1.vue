@@ -40,14 +40,6 @@ export default {
     };
   },
   methods: {
-    connect() {
-      this.$socket.open(); // 开始连接socket
-      console.log('链接');
-      // 仅在组件内订阅事件
-      this.sockets.subscribe('welcome', data => {
-        console.log('welcome data ', data);
-      });
-    },
     // 获取天气信息 传递给子组件
     getWeatherInfo() {
       weatherInfoApi(1, 1, 1)
@@ -87,8 +79,6 @@ export default {
     //   this.getWeatherInfo();
     //   this.getAtsInfo();
     // }, this.intervalNum);
-    this.connect();
-    this.$socket.emit('connect', 1);
   },
   beforeRouteLeave(to, from, next) {
     // 导航离开该组件的对应路由时调用

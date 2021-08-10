@@ -17,6 +17,7 @@
             <p>出口</p>
             <p class="english">EXIT</p>
           </div>
+          <img class="bus-icon" src="../assets/bus.png" alt="" srcset="" />
         </div>
         <div class="time-text">
           <span class="car-icon">984</span>
@@ -24,13 +25,13 @@
           <span>分钟（Min）</span>
         </div>
         <div class="time-text">
-          <span class="car-icon">984</span>
-          <span class="time-num">3</span>
+          <span class="car-icon">926</span>
+          <span class="time-num">2</span>
           <span>分钟（Min）</span>
         </div>
         <div class="time-text">
-          <span class="car-icon">984</span>
-          <span class="time-num">3</span>
+          <span class="car-icon">358</span>
+          <span class="time-num">1</span>
           <span>分钟（Min）</span>
         </div>
       </li>
@@ -41,6 +42,7 @@
             <p>出口</p>
             <p class="english">EXIT</p>
           </div>
+          <img class="bus-icon" src="../assets/bus.png" alt="" srcset="" />
         </div>
         <div class="time-text">
           <span class="car-icon">984</span>
@@ -48,13 +50,13 @@
           <span>分钟（Min）</span>
         </div>
         <div class="time-text">
-          <span class="car-icon">984</span>
-          <span class="time-num">3</span>
+          <span class="car-icon">926</span>
+          <span class="time-num">2</span>
           <span>分钟（Min）</span>
         </div>
         <div class="time-text">
-          <span class="car-icon">984</span>
-          <span class="time-num">3</span>
+          <span class="car-icon">358</span>
+          <span class="time-num">1</span>
           <span>分钟（Min）</span>
         </div>
       </li>
@@ -115,6 +117,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.bus-icon {
+  display: inline-block;
+  margin-right: 53px;
+}
 .arrived-box {
   width: 394px;
   background: linear-gradient(#1e1e3b, #07071b);
@@ -124,13 +130,14 @@ export default {
   color: #fff;
   right: 0;
   box-sizing: border-box;
+
   .exit-icon {
     display: inline-block;
     width: 70px;
     font-size: 40px;
     color: #fff;
     background: #003c85;
-    border: 4px solid #fff;
+    border: 2px solid #fff;
     text-align: center;
     vertical-align: bottom;
     border-radius: 10px;
@@ -177,7 +184,7 @@ export default {
   }
   .station-info {
     display: inline-block;
-    width: 240px;
+    width: 110px;
     color: #fff;
     text-align: left;
     font-size: 36px;
