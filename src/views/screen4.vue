@@ -15,7 +15,11 @@
         </div>
         <div class="screent-text-block screent-text-block-2">
           <span>10m</span>
-          <img class="person-icon" src="../assets/distance-right-1.gif" alt="" />
+          <img
+            class="person-icon"
+            src="../assets/distance-right-1.gif"
+            alt=""
+          />
           <img class="scroll-icon" src="../assets/arrow-bottom-1.png" alt="" />
         </div>
       </div>
@@ -34,7 +38,11 @@
         </div>
         <div class="screent-text-block screent-text-block-2">
           <span>10m</span>
-          <img class="person-icon" src="../assets/distance-right-1.gif" alt="" />
+          <img
+            class="person-icon"
+            src="../assets/distance-right-1.gif"
+            alt=""
+          />
           <img src="../assets/arrow-top-1.png" alt="" />
         </div>
       </div>
@@ -47,7 +55,6 @@
 import broadcast from '../components/broadcast.vue';
 import headerbox from '../components/headerbox.vue';
 export default {
-  name: '出站检票',
   components: {
     broadcast,
     headerbox
@@ -59,6 +66,20 @@ export default {
         text2: 'Exit Gate'
       }
     };
+  },
+  computed: {
+    currentStation() {
+      return this.$store.state.station;
+    }
+  },
+  // 监听变化 切换路由
+  watch: {
+    currentStation(curVal, oldVal) {
+      if (curVal === '11002' || curVal === '11102') {
+        // 金安桥 切换
+        this.$router.push({ path: 'screen4-3' });
+      }
+    }
   }
 };
 </script>

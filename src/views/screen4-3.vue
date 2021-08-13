@@ -78,7 +78,6 @@
 import broadcast from '../components/broadcast.vue';
 import headerbox from '../components/headerbox.vue';
 export default {
-  name: '出站检票',
   components: {
     broadcast,
     headerbox
@@ -90,6 +89,20 @@ export default {
         text2: 'Exit Gate'
       }
     };
+  },
+  computed: {
+    currentStation() {
+      return this.$store.state.station;
+    }
+  },
+  // 监听变化 切换路由
+  watch: {
+    currentStation(curVal, oldVal) {
+      if (curVal !== '11002' && curVal !== '11102') {
+        // 金安桥 切换
+        this.$router.push({ path: 'screen4' });
+      }
+    }
   }
 };
 </script>

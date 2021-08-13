@@ -6,25 +6,24 @@
     <div class="broadcast">
       <div class="broadcast-container" :style="{ left: leftNum + 'px' }">
         <div class="broadcast-item">
-          <span class="broadcast-text">欢迎乘坐北京地铁十一号线</span>
-          <span>Welcome to BeiJing Subway Line 11</span>
+          <span class="broadcast-text" ref="box1">
+            {{ this.$store.state.broadcast.cn }}
+          </span>
         </div>
-        <div class="broadcast-item" v-if="weatherInfo">
+        <div class="broadcast-item" ref="box2">
           <span class="broadcast-text">
-            {{ weatherInfo.weather }} 温度 {{ weatherInfo.temperture }} 湿度
-            {{ weatherInfo.humidity }}
+            {{ this.$store.state.broadcast.en }}
           </span>
-          <span>
-            Welcome to BeiJing Subway Line 11
-          </span>
-        </div>
-        <div class="broadcast-item" v-if="!weatherInfo">
-          <span class="broadcast-text">欢迎乘坐北京地铁十一号线</span>
-          <span>Welcome to BeiJing Subway Line 11</span>
         </div>
         <div class="broadcast-item">
-          <span class="broadcast-text">欢迎乘坐北京地铁十一号线</span>
-          <span>Welcome to BeiJing Subway Line 11</span>
+          <span class="broadcast-text">
+            {{ this.$store.state.broadcast.cn }}
+          </span>
+        </div>
+        <div class="broadcast-item">
+          <span class="broadcast-text">
+            {{ this.$store.state.broadcast.en }}
+          </span>
         </div>
       </div>
     </div>
@@ -36,21 +35,31 @@ export default {
   name: 'broadcast',
   props: {
     weatherInfo: {
-      type: Object
+      type: Object,
+      timer: ''
     }
   },
   data() {
     return {
-      leftNum: -500
+      leftNum: 140
     };
   },
   mounted() {
-    this.scrollScreen();
+    // 避免
+    this.timer = setTimeout(() => {
+      this.scrollScreen();
+    }, 5000);
+  },
+  destroyed() {
+    clearTimeout(this.timer);
   },
   methods: {
     scrollScreen() {
+      let calcWith =
+        this.$refs.box1.offsetWidth + this.$refs.box2.offsetWidth + 40;
+      // 获取内容的宽度
       setInterval(() => {
-        if (this.leftNum <= -3840) {
+        if (this.leftNum <= -calcWith) {
           this.leftNum = 0;
         } else {
           this.leftNum = this.leftNum - 2;
@@ -95,9 +104,10 @@ export default {
 }
 .broadcast-item {
   display: inline-block;
-  width: 1920px;
+  // width: 1920px;
 }
 .broadcast-text {
   margin-right: 40px;
+  font-size: 40px;
 }
 </style>

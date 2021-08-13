@@ -6,7 +6,7 @@
         {{ currentTime1[0] }}年{{ currentTime1[1] }}月{{ currentTime1[2] }}日
       </div>
       <div class="current-time">
-        {{ transformCn[currentTime3] }} {{ currentTime2 }}
+        {{ transformCn[currentTime3 - 1] }} {{ currentTime2 }}
       </div>
     </div>
     <!-- 根据状态 切换显示 -->
@@ -16,8 +16,8 @@
           <span class="exit-icon">11</span>
 
           <div class="station-info">
-            <p>开往金顶街</p>
-            <p class="english">To JINDINGJIE</p>
+            <p>开往金顶桥</p>
+            <p class="english">To Jinding Qiao</p>
           </div>
         </div>
         <div class="time-text">
@@ -28,7 +28,7 @@
               <p class="p2">The train Arriving</p>
             </div>
           </div>
-          <span class="time-num">3</span>
+          <span class="time-num">{{ this.$store.state.arrival_time }}</span>
           <span>分钟（Min）</span>
         </div>
         <div class="time-text" v-if="line1 !== 3">
@@ -48,7 +48,7 @@
           <span class="exit-icon">11</span>
           <div class="station-info">
             <p>开往首钢</p>
-            <p class="english">To SHOUGANG</p>
+            <p class="english">To Shou Gang</p>
           </div>
           <img class="dongao-logo" src="../assets/dongao.png" alt="" />
         </div>
@@ -60,7 +60,7 @@
               <p class="p2">The train Arriving</p>
             </div>
           </div>
-          <span class="time-num">3</span>
+          <span class="time-num">{{ this.$store.state.arrival_time }}</span>
           <span>分钟（Min）</span>
         </div>
         <div class="time-text" v-if="line1 !== 3">
@@ -80,7 +80,7 @@
           <span class="exit-icon s1">S1</span>
           <div class="station-info">
             <p>开往四道桥</p>
-            <p class="english">To SIDAOQIAO</p>
+            <p class="english">To Si Dao Qiao</p>
           </div>
         </div>
         <div class="time-text">
@@ -100,7 +100,7 @@
           <span class="exit-icon line-6">6</span>
           <div class="station-info">
             <p>开往杨庄</p>
-            <p class="english">To YANGZHUANG</p>
+            <p class="english">To Yang Zhuang</p>
           </div>
         </div>
         <div class="time-text">
@@ -124,7 +124,7 @@ export default {
   name: 'tips',
   props: {
     stopObj: Object,
-    line1: Number // 1 首钢 2 北辛安 3 金安桥 4 金顶街
+    line1: Number // 1 首钢 2 北辛安 3 金安桥 4 金顶桥
   },
   data() {
     return {

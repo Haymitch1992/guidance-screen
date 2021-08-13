@@ -39,6 +39,25 @@ export default {
       }
     };
   },
+  computed: {
+    currentStation() {
+      return this.$store.state.station;
+    }
+  },
+  // 监听变化 切换路由
+  watch: {
+    currentStation(curVal, oldVal) {
+      if (curVal === '11001' || curVal === '11101') {
+        this.$router.push({ path: 'screen1-1' });
+      } else if (curVal === '11002' || curVal === '11102') {
+        this.$router.push({ path: 'screen1-3' });
+      } else if (curVal === '11003' || curVal === '11103') {
+        this.$router.push({ path: 'screen1-2' });
+      } else if (curVal === '11004' || curVal === '11104') {
+        this.$router.push({ path: 'screen1-1' });
+      }
+    }
+  },
   methods: {
     connect() {
       this.$socket.open(); // 开始连接socket

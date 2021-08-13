@@ -1,4 +1,11 @@
-import {GET_SETTING,GET_WEATHER_INFO,GET_TRAIN_INFO,GET_GUIDE_INFO} from '@/service/api'
+import {
+  GET_SETTING,
+  GET_WEATHER_INFO,
+  GET_TRAIN_INFO,
+  GET_GUIDE_INFO,
+  HOTSPOTINFO,
+  TRAININFO
+} from '@/service/api'
 import {request, METHOD, removeAuthorization} from '@/utils/request'
 
 
@@ -31,10 +38,33 @@ export async function agsagsInfo(deviceId) {
   })
 }
 
+/**
+ * 车辆信息
+ * @param direction 0上行，1下行
+ * @param station 车站Id
+ * @returns {Promise<AxiosResponse<T>>}
+ */
+ export async function GETTRAININFO(direction,station) {
+  return request(TRAININFO, METHOD.GET,{
+    direction: direction,
+    station:station
+  })
+}
+
+/**
+ * 广播信息
+ * @param  
+ * @returns {Promise<AxiosResponse<T>>}
+ */
+ export async function GETHOTSPOTINFO() {
+  return request(HOTSPOTINFO, METHOD.GET)
+}
 
 export default {
   weatherInfoApi,
   screenSetting,
   trainInfo,
-  agsagsInfo
+  agsagsInfo,
+  GETHOTSPOTINFO,
+  GETTRAININFO
 }

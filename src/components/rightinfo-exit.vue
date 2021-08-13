@@ -6,7 +6,7 @@
         {{ currentTime1[0] }}年{{ currentTime1[1] }}月{{ currentTime1[2] }}日
       </div>
       <div class="current-time">
-        {{ transformCn[currentTime3] }} {{ currentTime2 }}
+        {{ transformCn[currentTime3 - 1] }} {{ currentTime2 }}
       </div>
     </div>
     <ul>
