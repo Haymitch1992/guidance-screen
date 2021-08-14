@@ -47,20 +47,18 @@
         </div>
       </div>
       <div class="screen-item  exit-block">
-        <span class="unvisiabled">
-          <span class="exit-icon">A</span>
-          <div class="screent-text-block">
-            <p>西南口</p>
-            <p class="text">Sounthwest</p>
-          </div>
-        </span>
+        <span class="exit-icon exit-icon-3 s1">S1</span>
+        <div class="screent-text-block">
+          <p>号线</p>
+          <p class="text">Line s1</p>
+        </div>
         <span class="exit-icon exit-icon-3">6</span>
         <div class="screent-text-block">
           <p>号线</p>
           <p class="text">Line 6</p>
         </div>
         <div class="screent-text-block screent-text-block-2">
-          <span>10m</span>
+          <span>30m</span>
           <img
             class="person-icon"
             src="../assets/distance-right-1.gif"
@@ -184,6 +182,12 @@ export default {
     border: 5px solid #fff;
     background: #b28619;
     color: #fff;
+  }
+  .s1 {
+    border: 5px solid #fff;
+    background: #a24416;
+    color: #fff;
+    font-size: 70px;
   }
   .exit-block {
     color: #fdd40d;

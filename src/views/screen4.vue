@@ -66,20 +66,6 @@ export default {
         text2: 'Exit Gate'
       }
     };
-  },
-  computed: {
-    currentStation() {
-      return this.$store.state.station;
-    }
-  },
-  // 监听变化 切换路由
-  watch: {
-    currentStation(curVal, oldVal) {
-      if (curVal === '11002' || curVal === '11102') {
-        // 金安桥 切换
-        this.$router.push({ path: 'screen4-3' });
-      }
-    }
   }
 };
 </script>

@@ -101,10 +101,13 @@ export default {
       let arr = e.data.split('|');
       // console.log('可以渲染网页数据...');
       console.log(arr);
-      this.$store.commit('setStation', {
-        station: arr[0],
-        direction: arr[1]
-      });
+      if (arr.length === 2) {
+        this.$store.commit('setStation', {
+          station: arr[0],
+          direction: arr[1]
+        });
+      }
+
       // 消息获取成功，重置心跳
       heartCheck.start(this.socket);
     },
@@ -113,7 +116,7 @@ export default {
       this.reconnect();
     },
     websocketsend() {
-      let data = { id: 'a1b2c3' };
+      let data = { id: 'start' };
       this.socket.send(JSON.stringify(data));
     }
   },
