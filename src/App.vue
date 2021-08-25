@@ -107,7 +107,13 @@ export default {
           direction: arr[1]
         });
       }
-
+      // 修改应急状态 setEmergencyState
+      if (e.data === 'emergent') {
+        this.$store.commit('setEmergencyState', true);
+      } else if (e.data === 'recover') {
+        this.$store.commit('setEmergencyState', false);
+      }
+      
       // 消息获取成功，重置心跳
       heartCheck.start(this.socket);
     },

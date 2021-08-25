@@ -1,57 +1,87 @@
 <template>
   <div>
-    <headerbox></headerbox>
-    <div class="screen-C">
-      <div class="screen-item  exit-block">
-        <span class="exit-icon">A</span>
-        <div class="screent-text-block">
-          <p>西南口</p>
-          <p class="text">Southwest</p>
-        </div>
-        <span class="exit-icon">B</span>
-        <div class="screent-text-block">
-          <p>西北口</p>
-          <p class="text">Northwest</p>
-        </div>
-        <div class="screent-text-block screent-text-block-2">
-          <span>10m</span>
-          <img
-            class="person-icon"
-            src="../assets/distance-right-1.gif"
-            alt=""
-          />
-          <img class="scroll-icon" src="../assets/arrow-bottom-1.png" alt="" />
-        </div>
+    <div class="safe-box" v-show="this.$store.state.emergencyState">
+      <div class="tips">
+        <p class="text-1">当前区域为安全区域，请按引导标识有序疏散</p>
+        <p class="text-2">
+          The current area is safe, please evacuate orderly by guidence
+        </p>
       </div>
-      <div class="screen-item  exit-block">
-        <span class="unvisiabled">
-          <span class="exit-icon">A</span>
-          <div class="screent-text-block">
-            <p>西南口</p>
-            <p class="text">Northeast</p>
-          </div>
-        </span>
-        <span class="exit-icon">C</span>
-        <div class="screent-text-block">
-          <p>东北口</p>
-          <p class="text">Northeast</p>
-        </div>
-        <div class="screent-text-block screent-text-block-2">
-          <span>10m</span>
-          <img
-            class="person-icon"
-            src="../assets/distance-right-1.gif"
-            alt=""
-          />
-          <img src="../assets/arrow-top-1.png" alt="" />
+      <div class="danger-content">
+        <img class="danger-img" src="../assets/danger-page-5.png" alt="" />
+        <div class="danger-text">
+          <p>安全出口</p>
+          <p class="danger-text-en">
+            EXIT
+            <span style="float:right;">20m</span>
+            <img
+              style="float:right;margin-top:16px;margin-right:10px;"
+              src="../assets/danger-page-16.png"
+              alt=""
+            />
+          </p>
         </div>
       </div>
     </div>
-    <broadcast></broadcast>
+    <div v-show="!this.$store.state.emergencyState">
+      <headerbox></headerbox>
+      <div class="screen-C">
+        <div class="screen-item  exit-block">
+          <span class="exit-icon">A</span>
+          <div class="screent-text-block">
+            <p>西南口</p>
+            <p class="text">Southwest</p>
+          </div>
+          <span class="exit-icon">B</span>
+          <div class="screent-text-block">
+            <p>西北口</p>
+            <p class="text">Northwest</p>
+          </div>
+          <div class="screent-text-block screent-text-block-2">
+            <span>10m</span>
+            <img
+              class="person-icon"
+              src="../assets/distance-right-1.gif"
+              alt=""
+            />
+            <img
+              class="scroll-icon"
+              src="../assets/arrow-bottom-1.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="screen-item  exit-block">
+          <span class="unvisiabled">
+            <span class="exit-icon">A</span>
+            <div class="screent-text-block">
+              <p>西南口</p>
+              <p class="text">Northeast</p>
+            </div>
+          </span>
+          <span class="exit-icon">C</span>
+          <div class="screent-text-block">
+            <p>东北口</p>
+            <p class="text">Northeast</p>
+          </div>
+          <div class="screent-text-block screent-text-block-2">
+            <span>10m</span>
+            <img
+              class="person-icon"
+              src="../assets/distance-right-1.gif"
+              alt=""
+            />
+            <img src="../assets/arrow-top-1.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <broadcast></broadcast>
+    </div>
   </div>
 </template>
 
 <script>
+import '../assets/danger.scss';
 import broadcast from '../components/broadcast.vue';
 import headerbox from '../components/headerbox.vue';
 export default {
@@ -71,6 +101,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.tips {
+  color: #fff;
+  text-align: right;
+  padding-right: 40px;
+  .text-1 {
+    font-size: 60px;
+  }
+  .text-2 {
+    font-size: 30px;
+  }
+}
 .scroll-icon {
   transform: rotate(-90deg);
 }

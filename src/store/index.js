@@ -11,7 +11,8 @@ export default new Vuex.Store({
     },
     station: '11101',
     direction: '1',
-    arrival_time:3
+    arrival_time: 3,
+    emergencyState:true
   },
   mutations: {
     setBroadcast(state, info) {
@@ -23,6 +24,9 @@ export default new Vuex.Store({
     },
     setArrivalTime(state, val) {
       state.arrival_time = val
+    },
+    setEmergencyState(state, val) {
+      state.emergencyState = val
     }
   },
   actions: {
