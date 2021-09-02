@@ -1,10 +1,22 @@
 <template>
   <div>
-    <div class="safe-box" v-show="this.$store.state.emergencyState">
-      <div class="tips">
-        <p class="text-1">当前区域为安全区域，请按引导标识有序疏散</p>
+    <div
+      class="safe-box"
+      v-show="
+        this.$store.state.emergencyState === 3 ||
+          this.$store.state.emergencyState === 4
+      "
+    >
+      <div class="tips" v-if="this.$store.state.emergencyState === 3">
+        <p class="text-1">暴雨黄色预警，请乘客有序出站</p>
         <p class="text-2">
-          The current area is safe, please evacuate orderly by guidence
+          Yellow Rainstorm Warning，Please Exit in Order.
+        </p>
+      </div>
+      <div class="tips tips2" v-if="this.$store.state.emergencyState === 4">
+        <p class="text-1">暴雨红色预警，请乘客迅速出站</p>
+        <p class="text-2">
+          Red Rainstorm Warning，Please Exit as Soon as Possible.
         </p>
       </div>
       <div class="danger-content">
@@ -13,17 +25,17 @@
           <p>安全出口</p>
           <p class="danger-text-en">
             EXIT
-            <span style="float:right;">20m</span>
             <img
-              style="float:right;margin-top:16px;margin-right:10px;"
+              style="margin-left:20px; margin-right:20px;"
               src="../assets/danger-page-16.png"
               alt=""
             />
+            <span>4Min</span>
           </p>
         </div>
       </div>
     </div>
-    <div v-show="!this.$store.state.emergencyState">
+    <div v-show="this.$store.state.emergencyState === 1">
       <headerbox></headerbox>
       <div class="screen-C">
         <div class="screen-item  exit-block">
@@ -103,13 +115,33 @@ export default {
 <style lang="scss" scoped>
 .tips {
   color: #fff;
-  text-align: right;
+  text-align: center;
   padding-right: 40px;
+  border: 20px solid #fffe48;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 0;
+  left: 0;
+  top: 0;
   .text-1 {
     font-size: 60px;
+    color: #fffe48;
   }
   .text-2 {
     font-size: 30px;
+    color: #fffe48;
+  }
+}
+.tips2 {
+  border: 20px solid #d30001;
+  .text-1 {
+    font-size: 60px;
+    color: #d30001;
+  }
+  .text-2 {
+    font-size: 30px;
+    color: #d30001;
   }
 }
 .scroll-icon {

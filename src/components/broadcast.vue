@@ -45,6 +45,7 @@ export default {
     };
   },
   mounted() {
+    clearTimeout(this.timer);
     // 避免
     this.timer = setTimeout(() => {
       this.scrollScreen();

@@ -108,12 +108,14 @@ export default {
         });
       }
       // 修改应急状态 setEmergencyState
-      if (e.data === 'emergent') {
-        this.$store.commit('setEmergencyState', true);
+      if (e.data === 'emergent1') {
+        this.$store.commit('setEmergencyState', 4);
+      } else if (e.data === 'emergent3') {
+        this.$store.commit('setEmergencyState', 3);
       } else if (e.data === 'recover') {
-        this.$store.commit('setEmergencyState', false);
+        this.$store.commit('setEmergencyState', 1);
       }
-      
+
       // 消息获取成功，重置心跳
       heartCheck.start(this.socket);
     },

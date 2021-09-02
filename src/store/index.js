@@ -12,7 +12,7 @@ export default new Vuex.Store({
     station: '11101',
     direction: '1',
     arrival_time: 3,
-    emergencyState:true
+    emergencyState:1, // 1正常状态 2应急状态 3普通暴雨 4严重暴雨
   },
   mutations: {
     setBroadcast(state, info) {

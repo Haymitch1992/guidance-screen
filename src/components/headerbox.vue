@@ -2,7 +2,7 @@
   <div class="header-box">
     <img src="../assets/sreen-logo.png" class="screen-logo" alt="screen-logo" />
     <span class="header-tip" v-if="showTip">
-      面向任意摄像头挥手3秒即可招援！ Wave to any camera for 3 seconds!
+      面向任意摄像头挥手3秒即可召援！ Wave to any camera for 3 seconds!
     </span>
     <span class="header-tip2" v-if="showTime">
       {{ currentTime1[0] }}年{{ currentTime1[1] }}月{{ currentTime1[2] }}日{{

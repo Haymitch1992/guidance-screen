@@ -1,13 +1,45 @@
 <template>
   <div>
+        <div
+      class="danger-box"
+      v-show="
+        this.$store.state.emergencyState === 3 ||
+          this.$store.state.emergencyState === 4
+      "
+    >
+      <div class="tips" v-if="this.$store.state.emergencyState === 3">
+        <p class="text-1">暴雨黄色预警，请勿停留</p>
+        <p class="text-2">
+          Yellow Rainstorm Warning, No Loitering!
+        </p>
+      </div>
+      <div class="tips tips2" v-if="this.$store.state.emergencyState === 4">
+        <p class="text-1">暴雨红色预警，请勿停留</p>
+        <p class="text-2">
+          Red Rainstorm Warning, No Loitering!
+        </p>
+      </div>
+      <div class="danger-content">
+        <img class="danger-img" src="../assets/danger-page-1.png" alt="" />
+        <div class="danger-text">
+          <p>禁止入内请尽快出站</p>
+          <p class="danger-text-en">
+            No Entry Please exit as soon as possible
+          </p>
+        </div>
+      </div>
+    </div>
+    <div v-show="this.$store.state.emergencyState === 1">
     <headerbox></headerbox>
     <broadcast></broadcast>
     <rightinfo :line1="3"></rightinfo>
     <entrance :stationType="stationType"></entrance>
+    </div>
   </div>
 </template>
 
 <script>
+import '../assets/danger.scss';
 import broadcast from '../components/broadcast.vue';
 import headerbox from '../components/headerbox.vue';
 import rightinfo from '../components/rightinfo-train.vue';
@@ -118,4 +150,36 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped4>
+.tips {
+  color: #fff;
+  text-align: center;
+  padding-right: 40px;
+  border: 20px solid #fffe48;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 0;
+  left: 0;
+  top: 0;
+  .text-1 {
+    font-size: 60px;
+    color: #fffe48;
+  }
+  .text-2 {
+    font-size: 30px;
+    color: #fffe48;
+  }
+}
+.tips2 {
+  border: 20px solid #d30001;
+  .text-1 {
+    font-size: 60px;
+    color: #d30001;
+  }
+  .text-2 {
+    font-size: 30px;
+    color: #d30001;
+  }
+}
+</style>

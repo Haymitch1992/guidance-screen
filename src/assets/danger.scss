@@ -6,9 +6,12 @@
   box-sizing: border-box;
   border: 20px solid #d30001;
   .danger-content {
-    width: 1500px;
-    margin: 250px auto;
+    width: 100%;
+    box-sizing: border-box;
     text-align: center;
+    border-top: 20px solid #d30001;
+    margin: 190px auto;
+    padding-top: 200px;
     .danger-img {
       display: inline-block;
       vertical-align: top;
@@ -17,14 +20,15 @@
     .danger-text {
       display: inline-block;
       margin-left: 40px;
+      margin-top: 100px;
       p {
-        font-size: 160px;
+        font-size: 100px;
         color: #d30001;
         text-align: left;
         font-weight: bold;
       }
       .danger-text-en {
-        font-size: 60px;
+        font-size: 50px;
       }
     }
   }
@@ -37,9 +41,12 @@
   box-sizing: border-box;
   border: 20px solid #00d900;
   .danger-content {
-    width: 1500px;
-    margin: 250px auto;
+    width: 100%;
+    box-sizing: border-box;
     text-align: center;
+    border-top: 20px solid #00d900;
+    margin: 195px auto;
+    padding-top: 200px;
     .danger-item{
       display: inline-block;
       color: #00d900;

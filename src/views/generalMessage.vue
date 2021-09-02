@@ -29,7 +29,7 @@
       </ul>
       <a href="javascript:;" @click="modelVisable = true" class="btn">
         <img src="../assets/voice.png" alt="" />
-        音视频招援
+        音视频召援
       </a>
     </div>
     <div class="general-content">
