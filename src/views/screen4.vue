@@ -30,7 +30,7 @@
               src="../assets/danger-page-16.png"
               alt=""
             />
-            <span>4Min</span>
+            <span>2Min</span>
           </p>
         </div>
       </div>

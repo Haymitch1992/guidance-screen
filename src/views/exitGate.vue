@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="danger-box"
+      class="safe-box"
       v-show="
         this.$store.state.emergencyState === 3 ||
           this.$store.state.emergencyState === 4
@@ -19,12 +19,27 @@
           Red Rainstorm Warning, No Loitering!
         </p>
       </div>
-      <div class="danger-content">
+      <!-- <div class="danger-content">
         <img class="danger-img" src="../assets/danger-page-1.png" alt="" />
         <div class="danger-text">
           <p>禁止入内请尽快出站</p>
           <p class="danger-text-en">
             No Entry Please exit as soon as possible
+          </p>
+        </div>
+      </div> -->
+      <div class="danger-content">
+        <img class="danger-img" src="../assets/danger-page-5.png" alt="" />
+        <div class="danger-text">
+          <p>安全出口</p>
+          <p class="danger-text-en" style="text-align:center;">
+            EXIT
+            <!-- <img
+              style="margin-left:20px; margin-right:20px;"
+              src="../assets/danger-page-16.png"
+              alt=""
+            />
+            <span>2Min</span> -->
           </p>
         </div>
       </div>
