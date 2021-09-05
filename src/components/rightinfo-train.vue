@@ -16,8 +16,8 @@
           <span class="exit-icon">11</span>
 
           <div class="station-info">
-            <p>开往金顶桥</p>
-            <p class="english">To Jinding Qiao</p>
+            <p>开往模式口</p>
+            <p class="english">To Moshi Kou</p>
           </div>
         </div>
         <div class="time-text">
@@ -47,8 +47,8 @@
         <div class="exit-icon-line">
           <span class="exit-icon">11</span>
           <div class="station-info">
-            <p>开往首钢</p>
-            <p class="english">To Shou Gang</p>
+            <p>开往新首钢</p>
+            <p class="english">To Xinshou Gang</p>
           </div>
           <img class="dongao-logo" src="../assets/dongao.png" alt="" />
         </div>
