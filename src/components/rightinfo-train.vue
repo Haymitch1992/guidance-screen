@@ -48,7 +48,7 @@
           <span class="exit-icon">11</span>
           <div class="station-info">
             <p>开往新首钢</p>
-            <p class="english">To Xinshou Gang</p>
+            <p class="english">To Xin Shougang</p>
           </div>
           <img class="dongao-logo" src="../assets/dongao.png" alt="" />
         </div>
