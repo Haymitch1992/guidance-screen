@@ -129,6 +129,8 @@ export default {
         this.$store.commit('setEmergencyState', 4);
       } else if (e.data === 'emergent3') {
         this.$store.commit('setEmergencyState', 3);
+      } else if (e.data === 'waiting') {
+        this.$store.commit('setEmergencyState', 5);
       } else if (e.data === 'recover') {
         this.$store.commit('setEmergencyState', 1);
       }
