@@ -34,6 +34,7 @@
       <broadcast></broadcast>
       <rightinfo :line1="1"></rightinfo>
       <entrance :stationType="stationType"></entrance>
+      <CountDown></CountDown>
     </div>
   </div>
 </template>
@@ -45,13 +46,15 @@ import headerbox from '../components/headerbox.vue';
 import rightinfo from '../components/rightinfo-train.vue';
 import entrance from '../components/entrance.vue';
 import { weatherInfoApi, trainInfo } from '../service/user';
+import CountDown from '../components/count-down.vue';
 export default {
   name: 'jinzhanjianpiao', // 进站检票
   components: {
     broadcast,
     headerbox,
     rightinfo,
-    entrance
+    entrance,
+    CountDown
   },
   data() {
     return {

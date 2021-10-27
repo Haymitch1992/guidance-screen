@@ -1,6 +1,6 @@
 <template>
   <div>
-        <div
+    <div
       class="danger-box"
       v-show="
         this.$store.state.emergencyState === 3 ||
@@ -30,10 +30,11 @@
       </div>
     </div>
     <div v-show="this.$store.state.emergencyState === 1">
-    <headerbox></headerbox>
-    <broadcast></broadcast>
-    <rightinfo :line1="2"></rightinfo>
-    <entrance :stationType="stationType"></entrance>
+      <headerbox></headerbox>
+      <broadcast></broadcast>
+      <rightinfo :line1="2"></rightinfo>
+      <entrance :stationType="stationType"></entrance>
+      <count-down></count-down>
     </div>
   </div>
 </template>
@@ -45,22 +46,24 @@ import headerbox from '../components/headerbox.vue';
 import rightinfo from '../components/rightinfo-train.vue';
 import entrance from '../components/entrance.vue';
 import { weatherInfoApi, trainInfo } from '../service/user';
+import CountDown from '../components/count-down.vue';
 export default {
   name: 'jinzhanjianpiao', // 进站检票
   components: {
     broadcast,
     headerbox,
     rightinfo,
-    entrance
+    entrance,
+    CountDown
   },
-    computed: {
+  computed: {
     currentStation() {
       return this.$store.state.station;
     }
   },
   // 监听变化 切换路由
   watch: {
-   currentStation(curVal, oldVal) {
+    currentStation(curVal, oldVal) {
       if (curVal === '11001' || curVal === '11101') {
         this.$router.push({ path: 'screen1-1' });
       } else if (curVal === '11002' || curVal === '11102') {

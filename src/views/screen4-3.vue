@@ -69,16 +69,19 @@
       </div>
     </div>
     <broadcast></broadcast>
+    <count-down style="left:1480px"></count-down>
   </div>
 </template>
 
 <script>
 import broadcast from '../components/broadcast.vue';
+import CountDown from '../components/count-down.vue';
 import headerbox from '../components/headerbox.vue';
 export default {
   components: {
     broadcast,
-    headerbox
+    headerbox,
+    CountDown
   },
   data() {
     return {

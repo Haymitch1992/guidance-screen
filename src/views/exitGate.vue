@@ -53,6 +53,7 @@
         :nearestStationB="nearestStationB"
       ></rightinfo>
       <entrance :stationType="stationType"></entrance>
+      <count-down></count-down>
     </div>
   </div>
 </template>
@@ -64,12 +65,14 @@ import headerbox from '../components/headerbox.vue';
 import rightinfo from '../components/rightinfo-exit.vue';
 import entrance from '../components/entrance.vue';
 import { weatherInfoApi } from '../service/user';
+import CountDown from '../components/count-down.vue';
 export default {
   components: {
     broadcast,
     headerbox,
     rightinfo,
-    entrance
+    entrance,
+    CountDown
   },
   data() {
     return {
