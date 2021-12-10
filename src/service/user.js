@@ -4,7 +4,9 @@ import {
   GET_TRAIN_INFO,
   GET_GUIDE_INFO,
   HOTSPOTINFO,
-  TRAININFO
+  TRAININFO,
+  WAITDATA,
+  CUSTOMERFLOW
 } from '@/service/api'
 import {request, METHOD, removeAuthorization} from '@/utils/request'
 
@@ -23,7 +25,7 @@ export async function weatherInfoApi(deviceId,direction,station) {
   })
 }
 
-// 获取ATS 动态数据 
+// 获取ATS 动态数据
 export async function trainInfo(deviceId,direction,station) {
   return request(GET_TRAIN_INFO, METHOD.GET, {
     deviceId: deviceId, // 设备ID
@@ -53,12 +55,23 @@ export async function agsagsInfo(deviceId) {
 
 /**
  * 广播信息
- * @param  
+ * @param
  * @returns {Promise<AxiosResponse<T>>}
  */
  export async function GETHOTSPOTINFO() {
   return request(HOTSPOTINFO, METHOD.GET)
+ }
+ export async function GETWAITDATA() {
+  return request(WAITDATA, METHOD.GET)
+ }
+ export async function GETCUSTOMERFLOW(start,end) {
+  return request(CUSTOMERFLOW, METHOD.GET,{
+    start: start,
+    end: end,
+    interval:1440
+  })
 }
+
 
 export default {
   weatherInfoApi,
@@ -66,5 +79,7 @@ export default {
   trainInfo,
   agsagsInfo,
   GETHOTSPOTINFO,
-  GETTRAININFO
+  GETTRAININFO,
+  GETWAITDATA,
+  GETCUSTOMERFLOW
 }
