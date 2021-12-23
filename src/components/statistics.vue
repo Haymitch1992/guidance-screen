@@ -33,7 +33,7 @@ export default {
       // 获取一下当前的时间
       let time = new Date();
       let year = time.getFullYear();
-      let month = time.getMonth();
+      let month = time.getMonth() + 1;
       let day = time.getDate();
       let start = year + '-' + month + '-' + day + ' 00:00:00';
       let end = year + '-' + month + '-' + day + ' 23:59:59';
