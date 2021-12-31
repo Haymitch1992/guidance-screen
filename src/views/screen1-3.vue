@@ -35,8 +35,9 @@
     <rightinfo :line1="3"></rightinfo>
     <entrance :stationType="stationType"></entrance>
     <count-down></count-down>
+    <Statistics></Statistics>
     </div>
-    
+
   </div>
 </template>
 
@@ -48,6 +49,7 @@ import rightinfo from '../components/rightinfo-train.vue';
 import entrance from '../components/entrance.vue';
 import { weatherInfoApi, trainInfo } from '../service/user';
 import CountDown from '../components/count-down.vue';
+import Statistics from '../components/statistics.vue';
 export default {
   name: 'jinzhanjianpiao', // 进站检票
   components: {
@@ -55,7 +57,8 @@ export default {
     headerbox,
     rightinfo,
     entrance,
-    CountDown
+    CountDown,
+    Statistics
   },
   computed: {
     currentStation() {

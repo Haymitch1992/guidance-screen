@@ -54,6 +54,7 @@
       ></rightinfo>
       <entrance :stationType="stationType"></entrance>
       <count-down></count-down>
+      <Statistics></Statistics>
     </div>
   </div>
 </template>
@@ -66,13 +67,15 @@ import rightinfo from '../components/rightinfo-exit.vue';
 import entrance from '../components/entrance.vue';
 import { weatherInfoApi } from '../service/user';
 import CountDown from '../components/count-down.vue';
+import Statistics from '../components/statistics.vue';
 export default {
   components: {
     broadcast,
     headerbox,
     rightinfo,
     entrance,
-    CountDown
+    CountDown,
+    Statistics
   },
   data() {
     return {

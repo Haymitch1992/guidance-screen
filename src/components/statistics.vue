@@ -12,6 +12,10 @@
       当日出站人数
       <span class="number-text">{{ num3 }}</span>
     </p>
+    <p>
+      累计参观人数
+      <span class="number-text">{{ num4 }}</span>
+    </p>
   </div>
 </template>
 
@@ -24,6 +28,7 @@ export default {
       num1: 0,
       num2: 0,
       num3: 0,
+      num4: 0,
       timer: null
     };
   },
@@ -46,6 +51,7 @@ export default {
         if (res.data.code === 200) {
           this.num2 = res.data.result.passenger_flow[0]['flow_in'];
           this.num3 = res.data.result.passenger_flow[0]['flow_out'];
+          this.num4 = res.data.result.vistor_number;
         }
       });
     }
@@ -89,9 +95,11 @@ export default {
   font-family: 'electronicFont';
   font-size: 40px;
   margin: 0 2px;
-  width: 60px;
+  width: 72px;
   display: inline-block;
   color: #0a96d9;
   text-align: right;
+  position: relative;
+  top: 4px;
 }
 </style>
