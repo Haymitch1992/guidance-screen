@@ -32,6 +32,8 @@
     <div v-show="this.$store.state.emergencyState === 1">
     <headerbox></headerbox>
     <broadcast></broadcast>
+     <!-- 无感进站交互信息反馈 -->
+      <gateInInfo ></gateInInfo>
     <rightinfo :line1="3"></rightinfo>
     <entrance :stationType="stationType"></entrance>
     <count-down></count-down>
@@ -50,6 +52,7 @@ import entrance from '../components/entrance.vue';
 import { weatherInfoApi, trainInfo } from '../service/user';
 import CountDown from '../components/count-down.vue';
 import Statistics from '../components/statistics.vue';
+import gateInInfo from '../components/gateInInfo.vue';
 export default {
   name: 'jinzhanjianpiao', // 进站检票
   components: {
@@ -58,7 +61,8 @@ export default {
     rightinfo,
     entrance,
     CountDown,
-    Statistics
+    Statistics,
+    gateInInfo
   },
   computed: {
     currentStation() {

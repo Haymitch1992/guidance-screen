@@ -35,13 +35,11 @@ export default {
   computed: {},
   methods: {
     getStatisticsData() {
+      const dayjs = require('dayjs');
+      const current = dayjs().format('YYYY-MM-DD');
       // 获取一下当前的时间
-      let time = new Date();
-      let year = time.getFullYear();
-      let month = time.getMonth() + 1;
-      let day = time.getDate();
-      let start = year + '-' + month + '-' + day + ' 00:00:00';
-      let end = year + '-' + month + '-' + day + ' 23:59:59';
+      let start = current + ' 00:00:00';
+      let end = current + ' 23:59:59';
       GETWAITDATA().then(res => {
         if (res.data.code === 200) {
           this.num1 = res.data.result.wait[0]['number'];
@@ -57,6 +55,7 @@ export default {
     }
   },
   mounted() {
+    this.getStatisticsData();
     this.timer = setInterval(() => {
       this.getStatisticsData();
       // 每隔10s请求数据
