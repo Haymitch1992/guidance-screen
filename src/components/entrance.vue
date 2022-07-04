@@ -22,7 +22,23 @@
       </div>
     </div>
     <div class="station-box" :class="fullScreen ? 'fullScreen' : ''">
-      <img src="../assets/gate.png" alt="" class="station-img" />
+      <!-- 进站右侧屏幕 显示 无感进站通道  -->
+      <div class="urcc-box">
+        <img src="../assets/urcc.jpg" alt="" class="urcc-logo" />
+        <p>扫码体验无感进站</p>
+      </div>
+      <img
+        src="../assets/gate-2.png"
+        v-if="!showImage"
+        alt=""
+        class="station-img"
+      />
+      <img
+        src="../assets/gate-1.png"
+        v-if="showImage"
+        alt=""
+        class="station-img"
+      />
     </div>
   </div>
 </template>
@@ -33,6 +49,17 @@ export default {
   props: {
     stationType: Object,
     fullScreen: Boolean
+  },
+  data() {
+    return {
+      showImage: false
+    };
+  },
+  mounted() {
+    // 获取参数
+    if (localStorage.getItem('showAuto')) {
+      this.showImage = true;
+    }
   }
 };
 </script>
@@ -44,6 +71,29 @@ p {
   vertical-align: middle;
 }
 
+.urcc-box {
+  padding: 0px;
+  border-radius: 8px;
+  position: fixed;
+  top: 554px;
+  left: 238px;
+  border: 4px solid #2b2b46;
+  z-index: 1000;
+  background: #22223c;
+  overflow: hidden;
+
+  p {
+    color: #0a96d9;
+    font-size: 22px;
+    text-align: center;
+    line-height: 50px;
+  }
+  img {
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
+}
 .stop-box {
   position: absolute;
   top: 260px;

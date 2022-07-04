@@ -16,6 +16,8 @@
       累计参观人数
       <span class="number-text">{{ num4 }}</span>
     </p>
+
+
   </div>
 </template>
 
@@ -74,6 +76,8 @@ export default {
   font-family: 'electronicFont';
   src: url('../assets/DS-DIGIT.TTF');
 }
+
+
 .statistics {
   position: absolute;
   top: 610px;
