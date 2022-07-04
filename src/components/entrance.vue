@@ -35,6 +35,7 @@
       />
       <img
         src="../assets/gate-1.png"
+
         v-if="showImage"
         alt=""
         class="station-img"
