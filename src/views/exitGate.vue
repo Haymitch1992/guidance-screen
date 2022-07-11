@@ -19,33 +19,18 @@
           Red Rainstorm Warning, No Loitering!
         </p>
       </div>
-      <!-- <div class="danger-content">
-        <img class="danger-img" src="../assets/danger-page-1.png" alt="" />
-        <div class="danger-text">
-          <p>禁止入内请尽快出站</p>
-          <p class="danger-text-en">
-            No Entry Please exit as soon as possible
-          </p>
-        </div>
-      </div> -->
       <div class="danger-content">
         <img class="danger-img" src="../assets/danger-page-5.png" alt="" />
         <div class="danger-text">
           <p>安全出口</p>
           <p class="danger-text-en" style="text-align:center;">
             EXIT
-            <!-- <img
-              style="margin-left:20px; margin-right:20px;"
-              src="../assets/danger-page-16.png"
-              alt=""
-            />
-            <span>2Min</span> -->
           </p>
         </div>
       </div>
     </div>
     <div v-show="this.$store.state.emergencyState === 1">
-      <headerbox></headerbox>
+      <!-- <headerbox></headerbox> -->
       <broadcast></broadcast>
       <rightinfo
         :busInfo="busInfo"
@@ -53,7 +38,7 @@
         :nearestStationB="nearestStationB"
       ></rightinfo>
       <entrance :stationType="stationType"></entrance>
-      <count-down></count-down>
+      <!-- <count-down></count-down> -->
       <Statistics></Statistics>
     </div>
   </div>
@@ -62,19 +47,19 @@
 <script>
 import '../assets/danger.scss';
 import broadcast from '../components/broadcast.vue';
-import headerbox from '../components/headerbox.vue';
+// import headerbox from '../components/headerbox.vue';
 import rightinfo from '../components/rightinfo-exit.vue';
 import entrance from '../components/entrance.vue';
 import { weatherInfoApi } from '../service/user';
-import CountDown from '../components/count-down.vue';
+// import CountDown from '../components/count-down.vue';
 import Statistics from '../components/statistics.vue';
 export default {
   components: {
     broadcast,
-    headerbox,
+    // headerbox,
     rightinfo,
     entrance,
-    CountDown,
+    // CountDown,
     Statistics
   },
   data() {
@@ -180,7 +165,7 @@ export default {
           );
         })
         .catch(() => {
-          this.$goBack();
+          // this.$goBack();
         });
     },
     nearestStation(arr) {
@@ -207,7 +192,7 @@ export default {
   beforeRouteLeave(to, from, next) {
     // 导航离开该组件的对应路由时调用
     // 可以访问组件实例 `this`
-    clearInterval(this.timer);
+    // clearInterval(this.timer);
     next();
   }
 };

@@ -37,17 +37,17 @@ export default {
     };
   },
   mounted() {
-    this.getCurrentTime();
-    setInterval(() => {
-      this.getCurrentTime();
-    }, 1000);
+    // this.getCurrentTime();
+    // setInterval(() => {
+    //   this.getCurrentTime();
+    // }, 10000);
   },
   methods: {
     getCurrentTime() {
       let dayjs = require('dayjs');
       let currnet = dayjs();
       this.currentTime1 = currnet.format('YYYY-MM-DD').split('-');
-      this.currentTime2 = currnet.format('HH:mm:ss');
+      this.currentTime2 = currnet.format('HH:mm');
       this.currentTime3 = currnet.day();
     }
   }

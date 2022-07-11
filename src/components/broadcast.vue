@@ -63,9 +63,9 @@ export default {
         if (this.leftNum <= -calcWith) {
           this.leftNum = 0;
         } else {
-          this.leftNum = this.leftNum - 2;
+          this.leftNum = this.leftNum - 1;
         }
-      }, 10);
+      }, 50);
     }
   }
 };

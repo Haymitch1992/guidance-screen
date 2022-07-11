@@ -113,7 +113,7 @@ export default {
       // console.log('得到响应', e.data);
       // 将数据进行切割
 
-      console.log('得到响应', e.data);
+      // console.log('得到响应', e.data);
       let obj = JSON.parse(e.data);
       if (obj.gateInInfo) {
         clearTimeout(this.timer2);

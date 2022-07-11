@@ -116,7 +116,7 @@ export default {
     this.getCurrentTime();
     setInterval(() => {
       this.getCurrentTime();
-    }, 1000);
+    }, 10000);
   },
   methods: {
     // 获取公交信息
@@ -125,7 +125,7 @@ export default {
       let dayjs = require('dayjs');
       let currnet = dayjs();
       this.currentTime1 = currnet.format('YYYY-MM-DD').split('-');
-      this.currentTime2 = currnet.format('HH:mm:ss');
+      this.currentTime2 = currnet.format('HH:mm');
       this.currentTime3 = currnet.day();
     }
   }

@@ -39,10 +39,10 @@ export default {
     }
   },
   mounted() {
-    this.calcTime();
-    this.timer = setInterval(() => {
-      this.calcTime();
-    }, 1000);
+    // this.calcTime();
+    // this.timer = setInterval(() => {
+    //   this.calcTime();
+    // }, 1000);
   },
   methods: {
     calcTime() {

@@ -23,6 +23,7 @@
 
 <script>
 import { GETWAITDATA, GETCUSTOMERFLOW } from '../service/user';
+const dayjs = require('dayjs');
 export default {
   props: {},
   data() {
@@ -37,7 +38,6 @@ export default {
   computed: {},
   methods: {
     getStatisticsData() {
-      const dayjs = require('dayjs');
       const current = dayjs().format('YYYY-MM-DD');
       // 获取一下当前的时间
       let start = current + ' 00:00:00';
