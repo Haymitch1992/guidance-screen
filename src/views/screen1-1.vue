@@ -65,6 +65,7 @@ export default {
   },
   data() {
     return {
+
       stationType: {
         text1: '进站检票',
         text2: 'Check in'
@@ -140,6 +141,7 @@ export default {
     //   this.getWeatherInfo();
     //   this.getAtsInfo();
     // }, this.intervalNum);
+
   },
   beforeRouteLeave(to, from, next) {
     // 导航离开该组件的对应路由时调用

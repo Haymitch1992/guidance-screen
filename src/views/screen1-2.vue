@@ -33,7 +33,7 @@
       <headerbox></headerbox>
       <broadcast></broadcast>
       <!-- 无感进站交互信息反馈 -->
-      <gateInInfo></gateInInfo>
+      <gateInInfo ></gateInInfo>
       <rightinfo :line1="2"></rightinfo>
       <entrance :stationType="stationType"></entrance>
       <count-down></count-down>
@@ -84,6 +84,7 @@ export default {
   },
   data() {
     return {
+
       stationType: {
         text1: '进站检票',
         text2: 'Check in'
@@ -150,6 +151,7 @@ export default {
     // }, this.intervalNum);
     this.connect();
     this.$socket.emit('connect', 1);
+
   },
   beforeRouteLeave(to, from, next) {
     // 导航离开该组件的对应路由时调用

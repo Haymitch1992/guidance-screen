@@ -32,8 +32,8 @@
     <div v-show="this.$store.state.emergencyState === 1">
       <headerbox></headerbox>
       <broadcast></broadcast>
-       <!-- 无感进站交互信息反馈 -->
-      <gateInInfo ></gateInInfo>
+      <!-- 无感进站交互信息反馈 -->
+      <gateInInfo></gateInInfo>
       <rightinfo :line1="4"></rightinfo>
       <entrance :stationType="stationType"></entrance>
       <count-down></count-down>

@@ -1,9 +1,9 @@
 <template>
   <div class="statistics">
-    <p>
+    <!-- <p>
       站内人数
       <span class="number-text">{{ num1 }}</span>
-    </p>
+    </p> -->
     <p>
       当日进站人数
       <span class="number-text">{{ num2 }}</span>
@@ -16,8 +16,6 @@
       累计参观人数
       <span class="number-text">{{ num4 }}</span>
     </p>
-
-
   </div>
 </template>
 

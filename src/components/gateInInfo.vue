@@ -31,7 +31,7 @@
 <script>
 // 监听
 const heartCheck = {
-  timeout: 5 * 1000,
+  timeout: 60 * 1000,
   timer: null,
   serverTimer: null,
   reset() {
@@ -43,7 +43,7 @@ const heartCheck = {
     this.timer = setTimeout(() => {
       // console.log('发送心跳,后端收到后，返回一个心跳消息')
       // onmessage拿到返回的心跳就说明连接正常
-      ws.send(JSON.stringify({ heart: 1 }));
+      ws.send(JSON.stringify({ id: 1, registerId: '36421' }));
       this.serverTimer = setTimeout(() => {
         // 如果超过一定时间还没响应(响应后触发重置)，说明后端断开了
         ws.close();
@@ -67,10 +67,9 @@ export default {
     };
   },
   mounted() {
-    this.initWebSocket();
-    // this.timer = setTimeout(() => {
-    //   this.showGateInInfo = false;
-    // }, 2000);
+    if (localStorage.getItem('showAuto')) {
+      this.initWebSocket();
+    }
   },
   methods: {
     reconnect() {
@@ -132,7 +131,7 @@ export default {
       this.reconnect();
     },
     websocketsend() {
-      let data = { id: 'start' };
+      let data = { id: 'start', registerId: '36421' };
       this.socket.send(JSON.stringify(data));
     }
   },
