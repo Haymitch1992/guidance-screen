@@ -11,6 +11,7 @@ export default new Vuex.Store({
     },
     station: '11101',
     direction: '1',
+    recommend:1, // 商业推荐
     arrival_time: 3,
     emergencyState:1, // 1正常状态 2应急状态 3普通暴雨 4严重暴雨 5开关站准备
   },
@@ -27,6 +28,9 @@ export default new Vuex.Store({
     },
     setEmergencyState(state, val) {
       state.emergencyState = val
+    },
+     setRecommendState(state, val) {
+      state.recommend = val
     }
   },
   actions: {

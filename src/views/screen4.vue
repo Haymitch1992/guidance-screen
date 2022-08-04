@@ -37,8 +37,12 @@
     </div>
     <div v-show="this.$store.state.emergencyState === 1">
       <headerbox></headerbox>
-      <div class="screen-C">
+      <div
+        class="screen-C"
+        :class="{ active: this.$store.state.recommend === 1 }"
+      >
         <div class="screen-item  exit-block">
+          <span class="floor-num">2F</span>
           <span class="exit-icon">A</span>
           <div class="screent-text-block">
             <p>西南口</p>
@@ -64,6 +68,7 @@
           </div>
         </div>
         <div class="screen-item  exit-block">
+          <span class="floor-num">2F</span>
           <span class="unvisiabled">
             <span class="exit-icon">A</span>
             <div class="screent-text-block">
@@ -84,6 +89,36 @@
               alt=""
             />
             <img src="../assets/arrow-top-1.png" alt="" />
+          </div>
+        </div>
+        <!-- 商业推荐 -->
+        <div
+          class="screen-item  exit-block"
+          v-if="$store.state.recommend === 1"
+        >
+          <span class="floor-num">1F</span>
+          <span class="unvisiabled">
+            <span class="exit-icon">T</span>
+            <div class="screent-text-block">
+              <p>西南口</p>
+              <p class="text">Northeast</p>
+            </div>
+          </span>
+          <span class="exit-icon" style="background:#fff">
+            <img src="../assets/coffee.png" class="coffee-icon" alt="" />
+          </span>
+          <div class="screent-text-block">
+            <p>咖啡厅</p>
+            <p class="text">Tcoffee</p>
+          </div>
+          <div class="screent-text-block screent-text-block-2">
+            <span>50m</span>
+            <img
+              class="person-icon"
+              src="../assets/distance-right-1.gif"
+              alt=""
+            />
+            <img src="../assets/arrow-bottom-1.png" alt="" />
           </div>
         </div>
       </div>
@@ -116,6 +151,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.coffee-icon {
+  width: 100px;
+  height: 100px;
+}
 .tips {
   color: #fff;
   text-align: center;
@@ -149,6 +188,16 @@ export default {
 }
 .scroll-icon {
   transform: rotate(-90deg);
+}
+.screen-C.active {
+  top: 200px;
+}
+.floor-num {
+  font-size: 80px;
+  position: relative;
+  top: 20px;
+  left: -140px;
+  margin-right: 50px;
 }
 .screen-C {
   position: absolute;

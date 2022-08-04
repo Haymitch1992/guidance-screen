@@ -133,6 +133,13 @@ export default {
         this.$store.commit('setEmergencyState', 5);
       } else if (e.data === 'recover') {
         this.$store.commit('setEmergencyState', 1);
+      } else {
+        if (e.data.indexOf('recommend') !== -1) {
+          let arr = e.data.split('&');
+          let gap = parseInt(arr[0].split('=')[1]);
+          console.log(gap);
+          this.$store.commit('setRecommendState', gap);
+        }
       }
 
       // 消息获取成功，重置心跳
