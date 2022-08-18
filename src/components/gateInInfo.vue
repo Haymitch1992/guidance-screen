@@ -108,7 +108,7 @@ export default {
       this.reconnect();
     },
     websocketonmessage(e) {
-      // console.log(e)
+      console.log(e);
       // console.log('得到响应', e.data);
       // 将数据进行切割
 
@@ -122,6 +122,12 @@ export default {
           this.showGateInInfo = false;
         }, 3000);
       }
+      if (obj.data) {
+        // 获取基础站信息
+        this.$store.commit('setCountNum', obj.data);
+        console.log(obj.data);
+      }
+
       // 存储数据
       // 消息获取成功，重置心跳
       heartCheck.start(this.socket);

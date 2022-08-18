@@ -32,6 +32,7 @@
     <div v-show="this.$store.state.emergencyState === 1">
       <!-- <headerbox></headerbox> -->
       <broadcast></broadcast>
+      <gateInInfo v-show="false"></gateInInfo>
       <rightinfo
         :busInfo="busInfo"
         :nearestStationA="nearestStationA"
@@ -53,6 +54,7 @@ import entrance from '../components/entrance.vue';
 import { weatherInfoApi } from '../service/user';
 // import CountDown from '../components/count-down.vue';
 import Statistics from '../components/statistics.vue';
+import gateInInfo from '../components/gateInInfo.vue';
 export default {
   components: {
     broadcast,
@@ -60,7 +62,8 @@ export default {
     rightinfo,
     entrance,
     // CountDown,
-    Statistics
+    Statistics,
+    gateInInfo
   },
   data() {
     return {

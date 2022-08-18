@@ -6,22 +6,22 @@
     </p> -->
     <p>
       当日进站人数
-      <span class="number-text">{{ num2 }}</span>
+      <span class="number-text">{{ this.$store.state.countNum.get_in }}</span>
     </p>
     <p>
       当日出站人数
-      <span class="number-text">{{ num3 }}</span>
+      <span class="number-text">{{ this.$store.state.countNum.get_out }}</span>
     </p>
     <p>
       累计参观人数
-      <span class="number-text">{{ num4 }}</span>
+      <span class="number-text">{{ this.$store.state.countNum.sum }}</span>
     </p>
   </div>
 </template>
 
 <script>
-import { GETWAITDATA, GETCUSTOMERFLOW } from '../service/user';
-const dayjs = require('dayjs');
+// 通过websocket 获取进站数据
+
 export default {
   props: {},
   data() {
@@ -30,39 +30,19 @@ export default {
       num2: 0,
       num3: 0,
       num4: 0,
-      timer: null
+      timer: null,
+      routerUrl: '',
+      wsuri: 'ws://172.51.216.152:5005/', // ws wss
+      lockReconnect: false, // 连接失败不进行重连
+      maxReconnect: 5, // 最大重连次数，若连接失败
+      socket2: null
     };
   },
   computed: {},
-  methods: {
-    getStatisticsData() {
-      const current = dayjs().format('YYYY-MM-DD');
-      // 获取一下当前的时间
-      let start = current + ' 00:00:00';
-      let end = current + ' 23:59:59';
-      GETWAITDATA().then(res => {
-        if (res.data.code === 200) {
-          this.num1 = res.data.result.wait[0]['number'];
-        }
-      });
-      GETCUSTOMERFLOW(start, end).then(res => {
-        if (res.data.code === 200) {
-          this.num2 = res.data.result.passenger_flow[0]['flow_in'];
-          this.num3 = res.data.result.passenger_flow[0]['flow_out'];
-          this.num4 = res.data.result.vistor_number;
-        }
-      });
-    }
-  },
-  mounted() {
-    this.getStatisticsData();
-    this.timer = setInterval(() => {
-      this.getStatisticsData();
-      // 每隔10s请求数据
-    }, 10000);
-  },
-  destroyed() {
-    clearInterval(this.timer);
+  methods: {},
+  mounted() {},
+  unmounted() {
+    // this.socket.close();
   },
   created() {},
   components: {}
@@ -74,7 +54,6 @@ export default {
   font-family: 'electronicFont';
   src: url('../assets/DS-DIGIT.TTF');
 }
-
 
 .statistics {
   position: absolute;

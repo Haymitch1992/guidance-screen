@@ -9,6 +9,11 @@ export default new Vuex.Store({
       en: 'Welcome To Beijing subway Line 11, Please wait inline, while passengers exit from the train.',
       cn: '欢迎乘坐北京地铁11号线，请按车站提示标志排队候车。'
     },
+    countNum: {
+      get_in: 23,
+      get_out: 21,
+      sum:8245
+    },
     station: '11101',
     direction: '1',
     recommend:1, // 商业推荐
@@ -31,6 +36,9 @@ export default new Vuex.Store({
     },
      setRecommendState(state, val) {
       state.recommend = val
+    },
+    setCountNum(state, val) {
+      state.countNum = val
     }
   },
   actions: {
