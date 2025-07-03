@@ -67,9 +67,9 @@ export default {
     };
   },
   mounted() {
-    if (localStorage.getItem('showAuto')) {
-      this.initWebSocket();
-    }
+    // if (localStorage.getItem('showAuto')) {
+    //   this.initWebSocket();
+    // }
   },
   methods: {
     reconnect() {
@@ -77,10 +77,10 @@ export default {
       if (this.lockReconnect || this.maxReconnect <= 0) {
         return;
       }
-      setTimeout(() => {
-        // this.maxReconnect-- // 不做限制 连不上一直重连
-        this.initWebSocket();
-      }, 60 * 1000);
+      // setTimeout(() => {
+      //   // this.maxReconnect-- // 不做限制 连不上一直重连
+      //   this.initWebSocket();
+      // }, 60 * 1000);
     },
     initWebSocket() {
       try {
